@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EfCoreDeleteExample.Controllers;
 
-
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController : ControllerBase
@@ -25,7 +24,21 @@ public class ProductController : ControllerBase
             await _context.SaveChangesAsync();
             return Ok($"Product with id {id} deleted successfully");
         }
+
         return NotFound($"Product with id {id} not found");
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeleteWhere(string name)
+    {
+        var result = await _context.Products.DeleteWhereAsync(p => p.Name == name);
+        if (result)
+        {
+            await _context.SaveChangesAsync();
+            return Ok($"Products with name {name} deleted successfully");
+        }
+
+        return NotFound($"No products found with name {name}");
     }
 
     [HttpGet]
