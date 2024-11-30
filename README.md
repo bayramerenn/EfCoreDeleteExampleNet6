@@ -1,0 +1,1 @@
+# EfCoreDeleteExampleNet6
