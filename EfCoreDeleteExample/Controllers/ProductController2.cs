@@ -35,7 +35,6 @@ public class ProductController2 : ControllerBase
         return Ok();
     }
 
-    public ;
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
