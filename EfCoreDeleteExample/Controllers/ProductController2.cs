@@ -27,7 +27,7 @@ public class ProductController2 : ControllerBase
 
         return NotFound($"Product with id {id} not found");
     }
-
+tests
     [HttpDelete]
     public async Task<IActionResult> DeleteWhere(string name)
     {
