@@ -31,14 +31,8 @@ public class ProductController : ControllerBase
     [HttpDelete]
     public async Task<IActionResult> DeleteWhere(string name)
     {
-        var result = await _context.Products.DeleteWhereAsync(p => p.Name == name);
-        if (result)
-        {
-            await _context.SaveChangesAsync();
-            return Ok($"Products with name {name} deleted successfully");
-        }
-
-        return NotFound($"No products found with name {name}");
+        var result = await _context.Products.Where(it => it.Name == name).ExecuteDeleteAsync();
+        return Ok();
     }
 
     [HttpGet]
