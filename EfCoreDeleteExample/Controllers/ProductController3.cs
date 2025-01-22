@@ -6,10 +6,10 @@ namespace EfCoreDeleteExample.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ProductController2 : ControllerBase
+public class ProductController3 : ControllerBase
 {
     private readonly AppDbContext _context;
-    public ProductController2(AppDbContext context)
+    public ProductController3(AppDbContext context)
     {
         _context = context;
     }
@@ -40,18 +40,18 @@ public class ProductController2 : ControllerBase
         return NotFound($"Product with id {id} not found");
     }
 
-    // public IActionResult Get()
-    // {
-    //     return Ok();
-    //     return Ok();
-    //     throw new Exception();
-    // }
-    // [HttpDelete]
-    // public async Task<IActionResult> DeleteWhere(string name)
-    // {
-    //     var result = await _context.Products.Where(it => it.Name == name).ExecuteDeleteAsync();
-    //     return Ok();
-    // }
+    public IActionResult Get()
+    {
+        return Ok();
+        return Ok();
+        throw new Exception();
+    }
+    [HttpDelete]
+    public async Task<IActionResult> DeleteWhere(string name)
+    {
+        var result = await _context.Products.Where(it => it.Name == name).ExecuteDeleteAsync();
+        return Ok();
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
