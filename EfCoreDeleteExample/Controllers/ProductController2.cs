@@ -44,6 +44,7 @@ public class ProductController2 : ControllerBase
     {
         return Ok();
         throw new Exception();
+        throw new Exception();
     }
     [HttpDelete]
     public async Task<IActionResult> DeleteWhere(string name)
