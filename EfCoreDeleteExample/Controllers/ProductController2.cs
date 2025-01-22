@@ -44,7 +44,6 @@ public class ProductController2 : ControllerBase
     {
         return Ok();
         return Ok();
-        return Ok();
         throw new Exception();
     }
     [HttpDelete]
