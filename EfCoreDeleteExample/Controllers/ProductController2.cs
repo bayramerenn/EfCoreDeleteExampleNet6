@@ -43,7 +43,6 @@ public class ProductController2 : ControllerBase
     public IActionResult Get()
     {
         return Ok();
-        return Ok();
         throw new Exception();
     }
     [HttpDelete]
