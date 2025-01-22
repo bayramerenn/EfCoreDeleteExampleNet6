@@ -9,7 +9,6 @@ namespace EfCoreDeleteExample.Controllers;
 public class ProductController2 : ControllerBase
 {
     private readonly AppDbContext _context;
-asfsafsfas
     public ProductController2(AppDbContext context)
     {
         _context = context;
