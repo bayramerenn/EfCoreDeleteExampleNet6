@@ -40,6 +40,11 @@ public class ProductController2 : ControllerBase
         return NotFound($"Product with id {id} not found");
     }
 
+    public IActionResult Get()
+    {
+        throw new Exception();
+        return Ok();
+    }
     [HttpDelete]
     public async Task<IActionResult> DeleteWhere(string name)
     {
