@@ -43,7 +43,6 @@ public class ProductController2 : ControllerBase
     public IActionResult Get()
     {
         throw new Exception();
-        return Ok();
     }
     [HttpDelete]
     public async Task<IActionResult> DeleteWhere(string name)
