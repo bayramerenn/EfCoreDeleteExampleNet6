@@ -13,7 +13,6 @@ public class ProductController4 : ControllerBase
     {
         _context = context;
     }
-
     
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteById(int id)
