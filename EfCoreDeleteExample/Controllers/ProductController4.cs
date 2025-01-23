@@ -20,8 +20,6 @@ public class ProductController4 : ControllerBase
         var result = await _context.Products.DeleteByIdAsync(id);
         if (result)
         {
-            as
-            await _context.SaveChangesAsync();
             return Ok($"Product with id {id} deleted successfully");
         }
         return NotFound($"Product with id {id} not found");
